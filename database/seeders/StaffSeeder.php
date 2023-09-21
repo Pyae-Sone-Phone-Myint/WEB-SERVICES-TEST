@@ -85,7 +85,7 @@ class StaffSeeder extends Seeder
 
         $staff = [];
         $user = [];
-        for ($i = 1; $i <= 25; $i++) {
+        for ($i = 1; $i <= 2; $i++) {
             $name = fake()->name();
             $email  = fake()->unique()->safeEmail();
             $staff[] = [

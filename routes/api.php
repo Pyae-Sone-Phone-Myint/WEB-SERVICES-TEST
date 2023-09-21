@@ -27,5 +27,14 @@ Route::prefix('v1')->middleware(AcceptJson::class)->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
         // Include the user routes
         include __DIR__ . '/Users/user.php';
+
+        // Include the role routes
+        include __DIR__ . "/Roles/role.php";
+
+        // Include the permission routes
+        include __DIR__ . "/Permissions/permissions.php";
+
+        // Include the department routes
+        include __DIR__ . "/Departments/departments.php";
     });
 });

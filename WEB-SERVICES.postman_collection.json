@@ -98,7 +98,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}/users/profile?code=5",
+									"raw": "{{base_url}}/users/profile",
 									"host": [
 										"{{base_url}}"
 									],
@@ -109,7 +109,8 @@
 									"query": [
 										{
 											"key": "code",
-											"value": "5"
+											"value": "5",
+											"disabled": true
 										}
 									]
 								}
@@ -133,6 +134,362 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "create-staff",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Aye Aye Aung\",\r\n    \"email\" : \"aaa@gmail.com\",\r\n    \"mobile\" : \"098987656\",\r\n    \"joinedDate\" : \"2022-04-04\",\r\n    \"depId\" : 2,\r\n    \"position\" : \"staff\",\r\n    \"age\" : 30,\r\n    \"gender\" : \"female\",\r\n    \"password\" : \"asdffdsa\",\r\n    \"password_confirmation\" : \"asdffdsa\",\r\n    \"role_id\" : [3]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/staff/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"staff",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-staff",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/staff/5/delete",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"staff",
+										"5",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "edit-staff",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Aye Aung\", \r\n    \"mobile\" : \"09887766778\",\r\n    \"depId\" : 4,\r\n    \"position\" : \"manager\",\r\n    \"age\" : 36,\r\n    \"role_id\" : [2,3]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/staff/6/edit",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"staff",
+										"6",
+										"edit"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Roles",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/roles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"hr-lay\",\r\n    \"label\" : \"HR\",\r\n    \"permission_id\" : [2]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/roles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/roles/4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"roles",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"hr-lay\",\r\n    \"label\" : \"HR\",\r\n    \"permission_id\" : [2]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/roles/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"roles",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Permissions",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/permissions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"text\",\r\n    \"label\" : \"text edit\",\r\n    \"role_id\" : [3,2]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/permissions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"text\",\r\n    \"label\" : \"text edit\",\r\n    \"role_id\" : [3]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/permissions/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"permissions",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/permissions/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"permissions",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Departments",
+					"item": [
+						{
+							"name": "index",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/departments",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"departments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"example name\",\r\n    \"label\" : \"example department\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/departments",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"departments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"example fafafdaf\",\r\n    \"label\" : \"example 2fafdafdaf department\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/departments/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"departments",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "destroy",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/departments/5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"departments",
+										"5"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -142,7 +499,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "NBDxtXUKGxMUvLMhiMsvvkhreoyq6KkiV1X3blZu5bbe3d15",
+						"value": "w4cPbBTdpvHF3WgoxuWg6Pi8fys6jtHD1tsoUdb222e22697",
 						"type": "string"
 					}
 				]

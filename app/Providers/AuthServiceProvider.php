@@ -27,5 +27,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('admin-or-manager', function ($user) {
             return in_array($user->staff->position, ['admin', 'manager']);
         });
+
+        Gate::define('admin-only', function ($user) {
+            return ($user->staff->position === 'admin');
+        });
     }
 }
