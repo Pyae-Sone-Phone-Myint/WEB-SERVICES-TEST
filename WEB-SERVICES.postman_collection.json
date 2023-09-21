@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "30c24bf8-f8ac-419e-9b94-ba72a2bfbd52",
+		"name": "WEB-SERVICES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25061579",
+		"_collection_link": "https://martian-trinity-646144.postman.co/workspace/Web-Services~53921826-e46f-4e0f-abf6-74e18070e08d/collection/25061579-30c24bf8-f8ac-419e-9b94-ba72a2bfbd52?action=share&source=collection_link&creator=25061579"
+	},
+	"item": [
+		{
+			"name": "APP",
+			"item": [
+				{
+					"name": "Profile",
+					"item": [
+						{
+							"name": "logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout-all",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/logout-all",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"logout-all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "change-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "current_password",
+											"value": "adminkwar",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "superadmin",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "superadmin",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/change-password",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "user-profile",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/profile?code=5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"profile"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "staffs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/users/staffs",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"staffs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "NBDxtXUKGxMUvLMhiMsvvkhreoyq6KkiV1X3blZu5bbe3d15",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "standarduser1@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "standarduser1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "superadmin@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "superadmin",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "manager@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "manager",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "uwiza@example.net",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
